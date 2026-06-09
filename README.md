@@ -41,4 +41,4 @@ The application will start on port 8080 by default.
 ## Troubleshooting
 
 - Ensure Java and Maven are installed and in your PATH.
-- If port 8080 is in use, you can change it in `src/main/resources/application.properties` by adding `server.port=8081` or another port.
+- If port 8080 is in use, you can change it in `src/main/resources/application.properties` by adding **`server.port=8081**` or another port.

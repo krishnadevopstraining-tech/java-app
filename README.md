@@ -33,7 +33,7 @@ The JAR file will be created in the `target/` directory as `krishna-devops-train
 To run the JAR file:
 
 ```bash
-java -jar target/krishna-devops-training-0.0.1-SNAPSHOT.jar
+nohup java -jar target/krishna-devops-training-0.0.1-SNAPSHOT.jar &
 ```
 
 The application will start on port 8080 by default.

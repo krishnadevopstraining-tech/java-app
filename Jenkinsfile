@@ -1,29 +1,27 @@
 pipeline {
     agent any
-
     stages {
         stage('checkout') {
             steps {
-                echo 'Checking out code...'
-                // Add your checkout steps here
+            git branch: 'main', url: 'https://github.com/krishnadevopstraining-tech/java-app.git'
             }
         }
-        stage('Build') {
+
+        stage('build') {
             steps {
-                echo 'Building...'
-                // Add your build steps here
+            sh 'mvn clean package -DskipTests'
             }
         }
-        stage('Test') {
+
+        stage('test') {
             steps {
-                echo 'Testing...'
-                // Add your test steps here
+            sh 'mvn test'
             }
         }
-        stage('Deploy') {
+
+        stage('deploy') {
             steps {
-                echo 'Deploying...'
-                // Add your deploy steps here
+            sh 'BUILD_ID=dontKillMe nohup java -jar target/krishna-devops-training-0.0.1-SNAPSHOT.jar --server.port=8081 > app.log 2>&1 &'
             }
         }
     }

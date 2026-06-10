@@ -25,7 +25,7 @@ pipeline {
 
         stage('deploy') {
             steps {
-            sh 'BUILD_ID=dontKillMe nohup java -jar target/krishna-devops-training-0.0.1-SNAPSHOT.jar --server.port=8081 > app.log 2>&1 &'
+            sh 'nohup java -jar target/krishna-devops-training-0.0.1-SNAPSHOT.jar --server.port=8081 > app.log 2>&1 &'
             }
         }
     }

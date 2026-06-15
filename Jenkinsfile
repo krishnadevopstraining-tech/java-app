@@ -30,7 +30,9 @@ pipeline {
                 whoami
         
                 ls -lh target/
-        
+                
+                export JENKINS_NODE_COOKIE=dontKillMe
+                
                 nohup java -jar target/krishna-devops-training-0.0.1-SNAPSHOT.jar \
                 --server.port=8081 > app.log 2>&1 &
         

@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        label 'terraform'
-    }
-    parameters {
-        choice(name: 'branch', choices: ['main', 'develop'], description: 'Git branch to build')
-    }
+    agent any
     tools {
         jdk 'JDK17'
     }

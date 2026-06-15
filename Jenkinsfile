@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-            git branch: "${params.branch}", url: 'https://github.com/krishnadevopstraining-tech/java-app.git'
+            git branch: main, url: 'https://github.com/krishnadevopstraining-tech/java-app.git'
             }
         }
 

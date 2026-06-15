@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        lable 'terraform'
+        label 'terraform'
     }
     tools {
         jdk 'JDK17'

@@ -2,13 +2,16 @@ pipeline {
     agent {
         label 'terraform'
     }
+    parameters {
+        choice(name: 'branch', choices: ['main', 'develop'], description: 'Git branch to build')
+    }
     tools {
         jdk 'JDK17'
     }
     stages {
         stage('checkout') {
             steps {
-            git branch: 'main', url: 'https://github.com/krishnadevopstraining-tech/java-app.git'
+            git branch: "${params.branch}", url: 'https://github.com/krishnadevopstraining-tech/java-app.git'
             }
         }
 

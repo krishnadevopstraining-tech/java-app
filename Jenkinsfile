@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        lable 'terraform'
+    }
     tools {
         jdk 'JDK17'
     }
